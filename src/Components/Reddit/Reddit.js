@@ -24,9 +24,12 @@ export default class Reddit extends Component {
 
   formatPostsData() {
     return this.state.items.map((obj, i) => {
+      obj.data.preview.enabled = true;
+      console.log(obj.data.preview.images[0].resolutions[0].url)
       return (
-        <div key={obj.data.id}>
-          <a href={obj.data.url} target='_blank'>{obj.data.title}</a>
+        <div className="reddit-post" key={obj.data.id}>
+          <a href={obj.data.url} target='_blank' rel='noopener noreferrer'><img src={obj.data.thumbnail} alt={obj.data.title} /></a>
+          <a href={obj.data.url} target='_blank' rel='noopener noreferrer'>{obj.data.title}</a>
         </div>
       );
     });

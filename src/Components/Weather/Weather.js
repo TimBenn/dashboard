@@ -8,11 +8,13 @@ export default class Weather extends Component {
     super(props);
     this.state = {
       weather: null,
+      shouldGetWeather: false
     };
   }
 
   componentDidMount() {
-    axios
+    if (this.state.shouldGetWeather) {
+      axios
       .get(
         "http://api.openweathermap.org/data/2.5/weather?zip=75287,us&APPID=c2cee36163ab80c9890a894b88613e37"
       )
@@ -22,11 +24,12 @@ export default class Weather extends Component {
       .catch(function(error) {
         console.log(error);
       });
+    }
   }
 
   render() {
     const myWeather = this.state.weather;
-    if (myWeather === null) {
+    if (myWeather === null && this.state.shouldGetWeather === false) {
         return <h2>Loading....</h2>
     }
     return (

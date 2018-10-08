@@ -9,3 +9,12 @@
     display: block;
     margin: 10px 0;
 }
+
+.reddit-post {
+    display: flex;
+    align-items: center;
+}
+
+.reddit-post img {
+    margin-right: 10px
+}
