@@ -1,0 +1,11 @@
+.reddit-card {
+    text-align: center;
+    padding: 10px;
+    background: #eee;
+    min-width: 300px;
+}
+
+.reddit-card a {
+    display: block;
+    margin: 10px 0;
+}

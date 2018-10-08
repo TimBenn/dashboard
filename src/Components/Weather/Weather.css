@@ -1,0 +1,6 @@
+.weather-card {
+    text-align: center;
+    padding: 10px;
+    background: #eee;
+    min-width: 300px;
+}
